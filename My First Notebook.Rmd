@@ -8,7 +8,25 @@ This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
 
 ```{r}
-plot(cars)
+#importing libraries
+library(dplyr)
+library(readr)
+library(ggplot2)
+#importing gapminder
+gapminder.base <- read.csv(file = '~/SDC_Worksop_20170826/intro-r-20170825/datasets/gapminder.txt', 
+                           header = TRUE, 
+                           sep = '\t')
+gapminder <- read_delim("~/SDC_Worksop_20170826/intro-r-20170825/datasets/gapminder.txt", 
+                       "\t", escape_double = FALSE, trim_ws = TRUE)
+#exporing gapminder
+head(gapminder)
+summary(gapminder)
+str(gapminder)
+
+
+
+
+
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
